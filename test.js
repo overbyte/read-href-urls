@@ -19,8 +19,8 @@ test("returns an array with two values", t => {
 	t.deepEqual(arrays, output);
 });
 
-test("returns an array with two values, using single quotes", t => {
+test("returns an array with two values, using quotes as intended", t => {
 	const output = ["http://theverge.com", "//google.com"]
-	const arrays = readUrls("<a href='http://theverge.com'>The Verge</a><a href='//google.com'>Google</a>");
+	const arrays = readUrls('<a href="http://theverge.com">The Verge</a><a href="//google.com">Google</a>');
 	t.deepEqual(arrays, output);
 });
